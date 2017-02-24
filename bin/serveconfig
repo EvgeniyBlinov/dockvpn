@@ -16,7 +16,7 @@ while ! [ -f client.http ]; do
     sleep 3
 done
 
-echo "https://$(curl -s http://myip.enix.org/REMOTE_ADDR):8080/"
+echo "https://$(curl -s http://ipinfo.io/ip):8080/"
 socat -d -d \
     OPENSSL-LISTEN:8080,fork,reuseaddr,key=key.pem,certificate=cert.pem,verify=0 \
     EXEC:'cat client.http' \
