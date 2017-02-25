@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu32:xenial
 RUN apt-get update -q \
     && apt-get install -qy openvpn iptables socat curl openssl
 ADD ./bin /usr/local/sbin
