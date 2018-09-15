@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-OPENVPN_PORT=1432
+[ -z "$OPENVPN_PORT" ] &&
+    export OPENVPN_PORT=1234
 
 [ -d /dev/net ] ||
     mkdir -p /dev/net
