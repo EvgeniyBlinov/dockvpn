@@ -35,6 +35,7 @@ persist-key
 persist-tun
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
+cipher AES-256-CBC
 
 proto tcp-server
 port 443
@@ -55,6 +56,7 @@ persist-key
 persist-tun
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
+cipher AES-256-CBC
 
 proto udp
 port $OPENVPN_PORT
@@ -74,6 +76,8 @@ client
 nobind
 dev tun
 redirect-gateway def1
+cipher AES-256-CBC
+auth-nocache
 
 <key>
 `cat key.pem`
